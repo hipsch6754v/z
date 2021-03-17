@@ -1,0 +1,104 @@
+name: Ubuntu
+on: 
+  workflow_dispatch:
+defaults:
+  run:
+    shell: bash
+    
+    
+jobs:
+
+
+  first: 
+    name: First
+    runs-on: ubuntu-18.04
+    timeout-minutes: 360
+    steps:
+    - uses: actions/checkout@v2
+    - name: Preparing Linux Environment
+      run: sudo apt-get update
+    - name: Setting Up the Ubuntu Environment
+      run: bash linux-ssh1.sh
+      env:
+        LINUX_USER_PASSWORD: ${{ secrets.LINUX_USER_PASSWORD }}
+        NGROK_AUTH_TOKEN1: ${{ secrets.NGROK_AUTH_TOKEN1 }}
+        LINUX_MACHINE_NAME: ${{ secrets.LINUX_MACHINE_NAME }}
+        LINUX_USERNAME: ${{ secrets.LINUX_USERNAME }}
+    - name: Keep Running Ubuntu System and keepAlive
+      run: sleep 6h
+      
+      
+  second: 
+    name: Second
+    runs-on: ubuntu-18.04
+    timeout-minutes: 360
+    steps:
+    - uses: actions/checkout@v2
+    - name: Preparing Linux Environment
+      run: sudo apt-get update
+    - name: Setting Up the Ubuntu Environment
+      run: bash linux-ssh2.sh
+      env:
+        LINUX_USER_PASSWORD: ${{ secrets.LINUX_USER_PASSWORD }}
+        NGROK_AUTH_TOKEN2: ${{ secrets.NGROK_AUTH_TOKEN2 }}
+        LINUX_MACHINE_NAME: ${{ secrets.LINUX_MACHINE_NAME }}
+        LINUX_USERNAME: ${{ secrets.LINUX_USERNAME }}
+    - name: Keep Running Ubuntu System and keepAlive
+      run: sleep 6h
+
+
+  thirth: 
+    name: Thirdth
+    runs-on: ubuntu-18.04
+    timeout-minutes: 360
+    steps:
+    - uses: actions/checkout@v2
+    - name: Preparing Linux Environment
+      run: sudo apt-get update
+    - name: Setting Up the Ubuntu Environment
+      run: bash linux-ssh3.sh
+      env:
+        LINUX_USER_PASSWORD: ${{ secrets.LINUX_USER_PASSWORD }}
+        NGROK_AUTH_TOKEN3: ${{ secrets.NGROK_AUTH_TOKEN3 }}
+        LINUX_MACHINE_NAME: ${{ secrets.LINUX_MACHINE_NAME }}
+        LINUX_USERNAME: ${{ secrets.LINUX_USERNAME }}
+    - name: Keep Running Ubuntu System and keepAlive
+      run: sleep 6h
+      
+      
+  fourth: 
+    name: Fourth
+    runs-on: ubuntu-18.04
+    timeout-minutes: 360
+    steps:
+    - uses: actions/checkout@v2
+    - name: Preparing Linux Environment
+      run: sudo apt-get update
+    - name: Setting Up the Ubuntu Environment
+      run: bash linux-ssh4.sh
+      env:
+        LINUX_USER_PASSWORD: ${{ secrets.LINUX_USER_PASSWORD }}
+        NGROK_AUTH_TOKEN4: ${{ secrets.NGROK_AUTH_TOKEN4 }}
+        LINUX_MACHINE_NAME: ${{ secrets.LINUX_MACHINE_NAME }}
+        LINUX_USERNAME: ${{ secrets.LINUX_USERNAME }}
+    - name: Keep Running Ubuntu System and keepAlive
+      run: sleep 6h
+      
+      
+  fifth: 
+    name: Fifth
+    runs-on: ubuntu-18.04
+    timeout-minutes: 360
+    steps:
+    - uses: actions/checkout@v2
+    - name: Preparing Linux Environment
+      run: sudo apt-get update
+    - name: Setting Up the Ubuntu Environment
+      run: bash linux-ssh5.sh
+      env:
+        LINUX_USER_PASSWORD: ${{ secrets.LINUX_USER_PASSWORD }}
+        NGROK_AUTH_TOKEN5: ${{ secrets.NGROK_AUTH_TOKEN5 }}
+        LINUX_MACHINE_NAME: ${{ secrets.LINUX_MACHINE_NAME }}
+        LINUX_USERNAME: ${{ secrets.LINUX_USERNAME }}
+    - name: Keep Running Ubuntu System and keepAlive
+      run: sleep 6h
